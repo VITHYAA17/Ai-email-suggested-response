@@ -3,9 +3,11 @@
 [![CI Test Suite](https://github.com/VITHYAA17/Ai-email-suggested-response/actions/workflows/ci.yml/badge.svg)](https://github.com/VITHYAA17/Ai-email-suggested-response/actions/workflows/ci.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20Demo-red)](https://ai-email-suggested-response-cqlqsymnuecj2ukplmzsyx.streamlit.app/)
 
 Hiver Engineering Challenge Submission  
-Repository: https://github.com/VITHYAA17/Ai-email-suggested-response  
+Live Web Application: https://ai-email-suggested-response-cqlqsymnuecj2ukplmzsyx.streamlit.app/  
+GitHub Repository: https://github.com/VITHYAA17/Ai-email-suggested-response  
 Author: Vithyaa & Pair Programming Assistant
 
 ---
@@ -272,9 +274,10 @@ In compliance with the challenge instructions ("Tell us in the README how you us
 
 ## 8. Deliverables Checklist
 
+- [x] **Live Web Application**: https://ai-email-suggested-response-cqlqsymnuecj2ukplmzsyx.streamlit.app/
 - [x] **Public GitHub Repository**: https://github.com/VITHYAA17/Ai-email-suggested-response
 - [x] **Dataset & Generation Script**: Curated datasets in `data/` and automated generator in `src/data/generator.py`.
-- [x] **Gen-AI Response Generator**: Runnable end-to-end via CLI and Streamlit web UI (`src/generator/`).
+- [x] **Gen-AI Response Generator**: Runnable end-to-end via Web UI, CLI, and REST API (`src/generator/`).
 - [x] **Accuracy & Evaluation System**: Multi-dimensional rubric, Chain-of-Thought explanations, and per-response and overall system scoring (`src/evaluator/`).
 - [x] **Statistical Quality Validation**: Documented correlation proof against human judgment (`src/evaluator/validation.py`).
 - [x] **Documentation**: Detailed README covering methodology, architectural trade-offs, setup instructions, and AI tool usage.
