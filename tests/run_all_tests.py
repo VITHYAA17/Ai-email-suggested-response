@@ -14,7 +14,8 @@ def run():
         "tests.test_dataset",
         "tests.test_retriever",
         "tests.test_generator",
-        "tests.test_evaluator"
+        "tests.test_evaluator",
+        "tests.test_api"
     ]
     
     total_passed = 0
