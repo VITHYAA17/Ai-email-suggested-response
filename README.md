@@ -1,5 +1,9 @@
 # 📬 AI Email Suggested-Response & Accuracy Evaluation System
 
+[![CI Test Suite](https://github.com/VITHYAA17/Ai-email-suggested-response/actions/workflows/ci.yml/badge.svg)](https://github.com/VITHYAA17/Ai-email-suggested-response/actions/workflows/ci.yml)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 > **Hiver Engineering Challenge Submission**  
 > **Repository URL**: [https://github.com/VITHYAA17/Ai-email-suggested-response](https://github.com/VITHYAA17/Ai-email-suggested-response)  
 > **Author**: Vithyaa & Pair Programming Assistant
