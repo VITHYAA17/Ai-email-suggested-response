@@ -5,6 +5,13 @@ Streamlit-based live playground, benchmark suite, and metric validation visualiz
 
 import os
 import sys
+from pathlib import Path
+
+# Ensure project root directory is in sys.path
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+
 import json
 import pandas as pd
 import plotly.express as px
