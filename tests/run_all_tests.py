@@ -26,7 +26,7 @@ def run():
         try:
             mod = __import__(mod_name, fromlist=["*"])
         except Exception as e:
-            print(f"  ❌ FAILED to import {mod_name}: {e}")
+            print(f"  [ERROR] FAILED to import {mod_name}: {e}")
             total_failed += 1
             continue
             
@@ -36,10 +36,10 @@ def run():
             func = getattr(mod, func_name)
             try:
                 func()
-                print(f"  ✅ PASS: {func_name}")
+                print(f"  [PASS] {func_name}")
                 total_passed += 1
             except Exception as e:
-                print(f"  ❌ FAIL: {func_name} -> {e}")
+                print(f"  [FAIL] {func_name} -> {e}")
                 traceback.print_exc()
                 total_failed += 1
                 
