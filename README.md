@@ -187,7 +187,7 @@ cp .env.example .env
 Add your Groq, OpenAI, or Gemini API key if available. If left unconfigured, the system automatically uses the internal offline heuristic mode.
 
 ### Running Automated Unit Tests
-Run the standalone test runner (12/12 passing):
+Run the standalone test runner (14/14 passing across dataset, retriever, generator, evaluator, and REST API):
 ```bash
 python -m tests.run_all_tests
 ```
@@ -206,6 +206,20 @@ Open `http://localhost:8501` in your browser. The dashboard includes:
 2. **Benchmark Suite**: Run evaluations across the 20 benchmark test cases with category breakdown charts and quality tier distributions.
 3. **Metric Validation**: View the statistical correlation scatter plot comparing automated ratings against human expert ratings.
 4. **Dataset Explorer**: Search and filter the 30 historical tickets and company policy documents.
+
+### Running the FastAPI REST Server
+Start the production REST API:
+```bash
+uvicorn src.api.main:app --reload --port 8000
+```
+Access interactive Swagger / OpenAPI documentation at: `http://localhost:8000/docs`
+
+Available endpoints:
+- `POST /v1/suggest`: Generate grounded suggested responses.
+- `POST /v1/evaluate`: Evaluate responses with multi-dimensional rubric.
+- `GET /v1/benchmark`: Run benchmark suite and return aggregate reports.
+- `GET /v1/validate`: Return statistical correlation metrics against human gold standards.
+- `GET /health`: System health and model availability check.
 
 ### Running via Command-Line Interface (CLI)
 
@@ -226,7 +240,17 @@ python -m src.cli validate --samples 10
 
 ---
 
-## 5. Docker Support
+## 5. Technical Documentation & Analysis
+
+For deep architectural reviews, the repository includes four specialized engineering guides:
+- **`ARCHITECTURE.md`**: Detailed system architecture diagram, component layout, and runtime design decisions.
+- **`EVALUATION_METHODOLOGY.md`**: Mathematical formulations, why lexical n-grams fail, and statistical validation proof ($r = 0.938$).
+- **`ERROR_ANALYSIS.md`**: Taxonomy of failure modes, boundary and edge-case handling, and the production Human-in-the-Loop roadmap.
+- **`BENCHMARK_RESULTS.md`**: Empirical comparison results contrasting Zero-Shot vs. Static Few-Shot vs. RAG-Grounded architectures.
+
+---
+
+## 6. Docker Support
 
 To run the application inside a containerized environment:
 ```bash
@@ -237,7 +261,7 @@ Access the application at `http://localhost:8501`.
 
 ---
 
-## 6. Disclosure of AI Tools Usage
+## 7. Disclosure of AI Tools Usage
 
 In compliance with the challenge instructions ("Tell us in the README how you used AI tools"):
 - **AI Coding Assistant (Antigravity)**: Used for rapid prototyping, drafting initial Pydantic data schemas, scaffolding unit test cases, and formatting Streamlit Plotly layouts.
@@ -246,7 +270,7 @@ In compliance with the challenge instructions ("Tell us in the README how you us
 
 ---
 
-## 7. Deliverables Checklist
+## 8. Deliverables Checklist
 
 - [x] **Public GitHub Repository**: https://github.com/VITHYAA17/Ai-email-suggested-response
 - [x] **Dataset & Generation Script**: Curated datasets in `data/` and automated generator in `src/data/generator.py`.

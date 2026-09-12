@@ -70,7 +70,7 @@ Hi there,
 
 I understand the urgency of getting your team back into the dashboard.
 
-The 'AudienceRestriction mismatch' error occurs when the Entity ID in Okta does not match your specific tenant identifier. In your Okta Admin Console, ensure the 'Audience URI (SP Entity ID)' field is set to: `https://app.ourdomain.com/sso/saml/{your_subdomain}`.
+The 'AudienceRestriction mismatch' error occurs when the Entity ID in Okta does not match your specific tenant identifier. In your Okta Admin Console, ensure the 'Audience URI (SP Entity ID)' field is set to: `https://app.ourdomain.com/sso/saml/{{your_subdomain}}`.
 
 In the meantime, Account Admins can authenticate directly via https://app.ourdomain.com/login?fallback=direct. Let us know if you need further help!
 

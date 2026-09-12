@@ -91,6 +91,7 @@ class EvaluationPipeline:
                 prohibited_promises=test.prohibited_promises,
                 test_id=test.id
             )
+            time.sleep(0.5)
 
             # Accumulate metrics
             tier_counts[eval_res.quality_tier] = tier_counts.get(eval_res.quality_tier, 0) + 1
