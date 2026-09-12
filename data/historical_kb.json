@@ -1,0 +1,594 @@
+[
+  {
+    "id": "KB-101",
+    "category": "billing_and_invoicing",
+    "subject": "Request for refund on annual subscription auto-renewal",
+    "customer_email": "Hi Support, my card was charged $1,200 yesterday for our annual shared inbox plan renewal. We intended to downgrade to 5 seats instead of renewing 15 seats. Can we please get a refund for the extra 10 seats or cancel and re-subscribe? Thanks, Sarah Jenkins.",
+    "customer_sentiment": "polite",
+    "intent": "Requesting partial or full refund for accidental annual auto-renewal and seat count adjustment",
+    "ground_truth_reply": "Hi Sarah,\n\nThanks for reaching out, and I'd be happy to help you with this!\n\nPer our 14-day renewal grace policy, because your renewal occurred within the last 48 hours, I have processed a prorated refund of $800 directly back to your original payment method for the 10 unused seats. Your subscription has now been adjusted to 5 active seats moving forward.\n\nPlease allow 3-5 business days for your bank to reflect the credit. Let me know if you need any further assistance with your account!\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "14-day renewal grace policy applies",
+      "Refund processed for 10 unused seats ($800)",
+      "Plan adjusted to 5 seats",
+      "3-5 business days refund arrival"
+    ],
+    "prohibited_actions": [
+      "Do not refuse refund if requested within 14 days of auto-renewal",
+      "Do not cancel the account entirely without confirmation"
+    ],
+    "policy_applied": "Billing Policy §3.2 - 14-Day Renewal Grace & Seat Proration"
+  },
+  {
+    "id": "KB-102",
+    "category": "billing_and_invoicing",
+    "subject": "Updating billing credit card after decline notification",
+    "customer_email": "Hello, I got an email saying our monthly payment failed and our shared mailbox might be suspended. How can I update our credit card details? Please don't suspend our account, we have active customer tickets! - Marcus Vance",
+    "customer_sentiment": "urgent",
+    "intent": "Updating credit card information and preventing account suspension due to failed payment",
+    "ground_truth_reply": "Hi Marcus,\n\nRest assured, your account is in a 7-day grace period, so your shared mailboxes remain fully active and will not be suspended.\n\nTo update your billing details:\n1. Log into your dashboard as an Account Admin.\n2. Navigate to Settings > Billing & Plans > Payment Methods.\n3. Click 'Update Card', enter your new card details, and click Save.\n\nOnce saved, our billing system will automatically retry the charge within 1 hour. If you run into any issues during the update, please reply directly to this thread and we'll assist immediately.\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "7-day grace period prevents immediate suspension",
+      "Steps: Settings > Billing & Plans > Payment Methods > Update Card",
+      "System retries charge automatically within 1 hour"
+    ],
+    "prohibited_actions": [
+      "Never ask customer to email credit card numbers or CVV",
+      "Do not threaten immediate suspension"
+    ],
+    "policy_applied": "Billing Policy §4.1 - Dunning and Grace Period"
+  },
+  {
+    "id": "KB-103",
+    "category": "billing_and_invoicing",
+    "subject": "Need VAT invoice with company tax registration number",
+    "customer_email": "Hi, our finance team in Germany needs our recent invoices updated to display our VAT ID (DE324891024) and legal company name 'CloudFlow GmbH'. Currently the invoices only say 'CloudFlow'. Can you reissue the last two receipts? Regards, Lukas Weber.",
+    "customer_sentiment": "neutral",
+    "intent": "Update invoice details with EU VAT registration number and company legal name, and reissue receipts",
+    "ground_truth_reply": "Hi Lukas,\n\nThank you for providing those details. I have updated your billing profile to reflect your legal entity 'CloudFlow GmbH' and appended your German VAT ID 'DE324891024'.\n\nI have re-generated your last two invoices (#INV-8821 and #INV-9204) with the updated tax information and attached them as PDFs to this email. You can also download them anytime from Settings > Billing > Invoice History.\n\nAll future invoices will automatically include this tax information. Please let me know if your finance team requires any additional documentation.\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Updated legal name to CloudFlow GmbH",
+      "Appended VAT ID DE324891024",
+      "Re-generated past 2 invoices and attached PDFs",
+      "Invoices accessible under Settings > Billing > Invoice History"
+    ],
+    "prohibited_actions": [
+      "Do not charge a fee for invoice corrections",
+      "Do not advise customer that VAT cannot be retroactively added within 60 days"
+    ],
+    "policy_applied": "Billing Policy §6.0 - International Tax Compliance"
+  },
+  {
+    "id": "KB-104",
+    "category": "technical_bugs",
+    "subject": "Emails delayed in shared mailbox by 15-30 minutes",
+    "customer_email": "URGENT: Our customer support team is noticing that incoming customer emails are appearing in the shared inbox 20 minutes after the customer actually sent them. This is hurting our first-response SLA. Is there an outage? - Priya Patel",
+    "customer_sentiment": "frustrated",
+    "intent": "Reporting email synchronization lag in shared mailbox affecting SLA",
+    "ground_truth_reply": "Hi Priya,\n\nThank you for alerting us, and we sincerely apologize for the delay impact on your team's SLAs.\n\nOur engineering team identified a temporary sync backlog with Google Workspace Push Notifications between 08:30 and 09:15 UTC. A fix was deployed at 09:20 UTC, and sync latency has returned to normal (< 3 seconds).\n\nTo ensure your local view is completely synchronized:\n1. Click the circular 'Sync Now' icon at the top right of your shared inbox header, or\n2. Perform a hard refresh in your browser (Ctrl+Shift+R or Cmd+Shift+R).\n\nYou can monitor real-time system status and subscribe to incident alerts at status.ourdomain.com. Please let us know if you observe any further latency on new emails.\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Sync backlog resolved at 09:20 UTC",
+      "Normal sync latency restored (< 3s)",
+      "Troubleshooting: click 'Sync Now' or hard refresh (Ctrl+Shift+R)",
+      "Status page: status.ourdomain.com"
+    ],
+    "prohibited_actions": [
+      "Do not deny the issue if an active incident occurred",
+      "Do not ask customer to re-install without first checking sync status"
+    ],
+    "policy_applied": "Incident Management Protocol §2.1"
+  },
+  {
+    "id": "KB-105",
+    "category": "technical_bugs",
+    "subject": "Chrome extension keeps crashing when clicking on long email threads",
+    "customer_email": "Whenever I open an email thread with more than 15 replies, the browser extension crashes and freezes Gmail. I have to reload the whole tab. I'm on Chrome version 125 on MacOS. What should I do? - Dave Miller",
+    "customer_sentiment": "frustrated",
+    "intent": "Chrome extension crashes on large email threads in Gmail",
+    "ground_truth_reply": "Hi Dave,\n\nI'm very sorry for the frustration this crash is causing during your workflow.\n\nThis is a known issue affecting extension version 4.2.1 when rendering extensive email threads with nested DOM elements. We released patch version 4.2.3 yesterday which completely addresses this memory bottleneck.\n\nTo force-update your extension:\n1. Open Chrome and navigate to `chrome://extensions`.\n2. Toggle on 'Developer mode' in the top right corner.\n3. Click 'Update' in the top toolbar.\n4. Ensure the extension version displays 4.2.3 or higher, then restart Chrome.\n\nCould you please give this a try and let us know if large threads open smoothly now? If the issue persists, we will inspect your browser console logs.\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Known issue in 4.2.1, resolved in patch 4.2.3",
+      "Steps to update: chrome://extensions > Developer mode > Update",
+      "Restart browser after updating"
+    ],
+    "prohibited_actions": [
+      "Do not recommend switching browsers permanently",
+      "Do not ask user to delete their account data"
+    ],
+    "policy_applied": "Technical Support §5.4 - Extension Diagnostics"
+  },
+  {
+    "id": "KB-106",
+    "category": "technical_bugs",
+    "subject": "Webhook endpoints failing with 504 Gateway Timeout",
+    "customer_email": "Hi team, our webhook subscriber for 'ticket.created' events has been failing with 504 Gateway Timeout since 2 PM today. Are your webhook payloads experiencing retry loops or sending oversized bodies? - Alex Chen, Tech Lead",
+    "customer_sentiment": "neutral",
+    "intent": "Webhook delivering 504 gateway timeout on ticket.created events",
+    "ground_truth_reply": "Hi Alex,\n\nThanks for reaching out with these technical details.\n\nOur webhook dispatch servers enforce a strict 5-second HTTP timeout for subscriber acknowledgement (HTTP 200 OK). When your endpoint takes longer than 5 seconds to respond, our gateway terminates the connection with a 504 status and enqueues the event for exponential backoff retry.\n\nTo resolve this, we recommend:\n1. Having your receiving server return an immediate HTTP 200/202 upon payload receipt.\n2. Offloading heavy downstream processing (such as CRM synchronizations or database writes) to an asynchronous worker queue (e.g., Celery, SQS, or Redis Queue).\n\nOur payload sizes have remained constant (~4 KB). You can review delivery attempt logs and manual redelivery options under Settings > Integrations > Webhooks > Delivery Logs.\n\nBest regards,\nDeveloper Support Team",
+    "key_facts": [
+      "Webhook timeout threshold is 5 seconds",
+      "Requires immediate HTTP 200/202 before processing payload",
+      "Recommend asynchronous queue for downstream processing",
+      "Logs available in Settings > Integrations > Webhooks > Delivery Logs"
+    ],
+    "prohibited_actions": [
+      "Do not promise to increase server timeout beyond system limits",
+      "Do not claim webhook server is down without verifying gateway metrics"
+    ],
+    "policy_applied": "API & Webhook Architecture Guidelines"
+  },
+  {
+    "id": "KB-107",
+    "category": "account_access",
+    "subject": "Cannot log in with Okta SSO - invalid SAML assertion error",
+    "customer_email": "Our entire team is locked out of the dashboard when clicking 'Sign in with SSO'. Okta shows an error: 'SAML Assertion invalid: AudienceRestriction mismatch'. Can you help ASAP? - Rachel Zane, IT Administrator",
+    "customer_sentiment": "urgent",
+    "intent": "Troubleshoot SAML SSO login failure due to AudienceRestriction mismatch",
+    "ground_truth_reply": "Hi Rachel,\n\nThank you for reaching out, and I understand the urgency of getting your team back into the dashboard.\n\nThe 'AudienceRestriction mismatch' error occurs when the Entity ID configured in your Okta SAML application does not match your team's specific tenant identifier.\n\nTo resolve this in your Okta Admin Console:\n1. Go to Applications > Your App > General tab > SAML Settings > Edit.\n2. In the 'Audience URI (SP Entity ID)' field, ensure the value is exactly: `https://app.ourdomain.com/sso/saml/{your_subdomain}` (without trailing slash).\n3. Ensure the 'Recipient' and 'Destination' URLs match `https://app.ourdomain.com/sso/saml/acs`.\n4. Save changes and test SSO in an incognito window.\n\nIn the meantime, Account Admins can still authenticate using email and password via `https://app.ourdomain.com/login?fallback=direct`. Let us know if you need us to join a screen share to review your SAML attributes.\n\nBest regards,\nEnterprise Support Team",
+    "key_facts": [
+      "Audience URI must match exact tenant format https://app.ourdomain.com/sso/saml/{subdomain}",
+      "Recipient and Destination must point to /sso/saml/acs",
+      "Direct login fallback available at /login?fallback=direct"
+    ],
+    "prohibited_actions": [
+      "Do not disable SSO without admin verification",
+      "Do not reveal other customers' Entity IDs"
+    ],
+    "policy_applied": "Security & Identity Management §1.8"
+  },
+  {
+    "id": "KB-108",
+    "category": "account_access",
+    "subject": "Lost phone with Google Authenticator - 2FA reset request",
+    "customer_email": "Hello, I lost my phone yesterday and cannot provide my 2FA authentication code to log into my agent account (mark.s@acme.com). I don't have my recovery codes. Can you please reset my two-factor authentication? Thanks, Mark.",
+    "customer_sentiment": "urgent",
+    "intent": "Agent requesting 2-Factor Authentication reset after losing phone without recovery codes",
+    "ground_truth_reply": "Hi Mark,\n\nI can certainly help you regain access to your account.\n\nBecause 2FA is a critical security protection, our security protocol requires identity verification before resetting credentials:\n1. Your account Organization Owner or Admin must submit a quick confirmation authorizing the 2FA reset for `mark.s@acme.com`.\n2. Alternatively, they can reset your 2FA directly from their Admin dashboard under Settings > Team Management > Users > Click 'Mark S' > 'Reset 2FA'.\n\nI have dispatched a secure authorization request to your organization's primary admin on file. As soon as they confirm, your 2FA will be cleared and you will be prompted to register your new device upon next login.\n\nBest regards,\nSecurity & Support Team",
+    "key_facts": [
+      "Cannot reset 2FA without Org Admin authorization or verified ownership",
+      "Admin can reset it directly under Settings > Team Management > Users",
+      "Authorization ping sent to primary admin"
+    ],
+    "prohibited_actions": [
+      "NEVER reset 2FA solely based on an inbound email without secondary admin verification",
+      "Never bypass 2FA by providing temporary plaintext passwords"
+    ],
+    "policy_applied": "Identity Verification & 2FA Reset Policy §2.4"
+  },
+  {
+    "id": "KB-109",
+    "category": "feature_requests",
+    "subject": "Do you support WhatsApp Business inbox integration?",
+    "customer_email": "Hi Hiver team, our support agents currently manage emails in shared inboxes, but we are receiving more customer queries on WhatsApp. Do you have a direct WhatsApp integration or an ETA for when this will be available? Thanks, Carlos Mendez.",
+    "customer_sentiment": "curious",
+    "intent": "Inquiring about WhatsApp Business shared inbox integration and roadmap availability",
+    "ground_truth_reply": "Hi Carlos,\n\nThank you for reaching out! Expanding omnichannel support to include WhatsApp is one of our most requested capabilities.\n\nWhile a native direct WhatsApp integration is currently scheduled on our product roadmap for Q4 this year, you can connect WhatsApp today using our Zapier or Twilio webhook integration. This allows inbound WhatsApp messages to generate and sync with tickets directly in your shared inbox.\n\nI have recorded your vote on our product feature board so our product managers can notify you as soon as the private beta opens. You can also view our integration guide for Twilio/Zapier here: `docs.ourdomain.com/integrations/whatsapp`.\n\nWould you be interested in participating in the early beta testing group when it launches?\n\nBest regards,\nCustomer Success Team",
+    "key_facts": [
+      "Native WhatsApp integration planned for Q4 roadmap",
+      "Workaround available via Twilio or Zapier webhooks",
+      "Customer vote logged on feature board",
+      "Documentation at docs.ourdomain.com/integrations/whatsapp"
+    ],
+    "prohibited_actions": [
+      "Do not give a binding contractual release date",
+      "Do not claim features exist if they require third-party bridges without disclosing"
+    ],
+    "policy_applied": "Product Feedback & Feature Disclosure Policy"
+  },
+  {
+    "id": "KB-110",
+    "category": "feature_requests",
+    "subject": "Request: Ability to set custom SLA business hours for weekend teams",
+    "customer_email": "Hi, right now SLA timers run 9-5 Mon-Fri. We just started a weekend customer support shift and need SLA tracking to apply to Saturdays and Sundays with distinct response targets. Can this be configured? - Emily Thorne",
+    "customer_sentiment": "neutral",
+    "intent": "Configuring custom SLA business hour schedules for weekend shifts",
+    "ground_truth_reply": "Hi Emily,\n\nGreat question! Yes, custom multi-schedule SLA policies are fully supported on our Enterprise and Pro plans.\n\nHere is how you can set up your weekend schedule:\n1. Navigate to Settings > Workflows & Automation > SLA Policies.\n2. Click 'Business Hours Schedules' > 'Add New Schedule'.\n3. Name the schedule 'Weekend Shift' and define the active hours (e.g., Saturday & Sunday 09:00 - 17:00).\n4. In your SLA Rules tab, create a new rule targeting incoming weekend tickets and link it to this new schedule.\n\nOnce configured, SLA countdown timers will calculate strictly according to your weekend shift hours without penalizing weekday queues. Here is our step-by-step walkthrough: `docs.ourdomain.com/sla/custom-schedules`.\n\nLet us know if you'd like us to review your rule setup once you've saved it!\n\nBest regards,\nCustomer Success Team",
+    "key_facts": [
+      "Custom multi-schedule SLAs supported on Pro and Enterprise tiers",
+      "Configured via Settings > Workflows & Automation > SLA Policies > Business Hours Schedules",
+      "Step-by-step guide link provided",
+      "Offer to review customer configuration"
+    ],
+    "prohibited_actions": [
+      "Do not tell customer feature is impossible when already supported",
+      "Do not alter user SLA settings without explicit permission"
+    ],
+    "policy_applied": "Product Functionality & SLA Guidelines"
+  },
+  {
+    "id": "KB-111",
+    "category": "sla_escalations",
+    "subject": "CRITICAL: Major outage affecting US-East customers and SLA breach",
+    "customer_email": "We have had an open ticket (#TK-99201) regarding email dispatch failure for over 4 hours with ZERO update. This is a clear breach of our 1-hour Critical SLA. Our CTO is demanding an executive incident report immediately. - Nathan Drake, Director of Support",
+    "customer_sentiment": "frustrated",
+    "intent": "Customer escalating critical SLA breach and demanding status update + incident report",
+    "ground_truth_reply": "Hi Nathan,\n\nI sincerely apologize for the delay in updates on ticket #TK-99201 and the unacceptable breach of your 1-hour Critical SLA. I recognize the severity of this disruption to your operations.\n\nI have immediately escalated ticket #TK-99201 to our Senior On-Call Engineering Lead and our Head of Support. Here is the current status:\n- The dispatch service bottleneck in US-East has been isolated to a routing failure in our primary cloud cluster. A failover route was provisioned 15 minutes ago, and dispatch queues are clearing.\n- We are currently verifying end-to-end delivery confirmation across all outbound queues.\n\nI will personally provide you with updates every 30 minutes until 100% resolution is confirmed. Furthermore, our Reliability Engineering team is compiling a formal Post-Incident Review (RCA) including downtime calculations and SLA credit adjustments, which will be delivered within 24 hours.\n\nSincerely,\nMarcus Sterling\nCustomer Support Operations Lead",
+    "key_facts": [
+      "Acknowledge and apologize for SLA breach",
+      "Escalated to Senior Engineering Lead & Head of Support",
+      "Issue status: routing failure isolated, failover route active, queue draining",
+      "Commitment: updates every 30 minutes",
+      "RCA and SLA credit calculations delivered within 24 hours"
+    ],
+    "prohibited_actions": [
+      "Do not make defensive excuses or blame the customer",
+      "Do not dismiss the SLA breach",
+      "Never leave an escalation without a concrete time commitment for the next update"
+    ],
+    "policy_applied": "Executive Incident Escalation & SLA Breach Protocol §4.0"
+  },
+  {
+    "id": "KB-112",
+    "category": "product_how_to",
+    "subject": "How to set up round-robin auto assignment for incoming emails?",
+    "customer_email": "Hello! We just added 4 new agents to our sales inquiry mailbox. How do we configure the inbox so each incoming email is evenly distributed in a round-robin fashion across our team members? Thanks, Chloe Bennett.",
+    "customer_sentiment": "polite",
+    "intent": "Instructions for setting up automated round-robin email assignment among team agents",
+    "ground_truth_reply": "Hi Chloe,\n\nWelcome to your new team members! Setting up automated round-robin assignment is quick and easy.\n\nHere is how to set it up:\n1. Go to Settings > Shared Mailboxes and select your 'Sales Inquiry' mailbox.\n2. Click on the 'Automations' tab and select 'Create Rule'.\n3. Under 'Trigger', choose: 'When a new email arrives'.\n4. Under 'Actions', select 'Assign to Team Member' and choose the 'Round-Robin' option.\n5. Check the boxes next to the 4 agents you wish to include in the distribution pool.\n6. (Optional) Check 'Skip offline agents' if you only want active team members to receive assignments.\n7. Click 'Save and Activate Rule'.\n\nMoving forward, all incoming conversations will rotate evenly among the selected agents. Here is our full documentation for reference: `docs.ourdomain.com/automations/round-robin`.\n\nPlease let me know if you'd like any help setting this up!\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Settings > Shared Mailboxes > [Mailbox] > Automations > Create Rule",
+      "Trigger: When a new email arrives",
+      "Action: Assign to Team Member > Round-Robin",
+      "Select agents and optional 'Skip offline agents' toggle",
+      "Documentation link provided"
+    ],
+    "prohibited_actions": [
+      "Do not recommend third-party plugins when native round-robin exists",
+      "Do not advise complex code scripts"
+    ],
+    "policy_applied": "Product Feature Guidance - Automation Rules"
+  },
+  {
+    "id": "KB-113",
+    "category": "product_how_to",
+    "subject": "Preventing two agents from replying to the same email at the same time",
+    "customer_email": "Hi support, two of our agents accidentally sent conflicting replies to the same customer at almost the exact same time. Is there any collision detection or warning feature that alerts an agent if someone else is already typing? - Robert Lang",
+    "customer_sentiment": "frustrated",
+    "intent": "Inquiring about collision detection feature to prevent simultaneous conflicting replies",
+    "ground_truth_reply": "Hi Robert,\n\nThank you for reaching out. Preventing overlapping customer communications is crucial, and we have a built-in feature designed specifically for this called **Collision Detection**.\n\nHere is how Collision Detection works:\n- **Viewing Indicator**: An avatar appears on the email header showing in real-time when another agent has the conversation open.\n- **Typing Lock**: If an agent starts composing a reply, a yellow banner warns: '[Agent Name] is currently replying...'.\n- **Send Protection**: If an agent attempts to send a reply while another reply was just submitted, the system displays a confirmation modal with the newly received message.\n\nTo ensure Collision Detection is active for your shared inbox:\n1. Go to Settings > Shared Mailboxes > Select Mailbox.\n2. In the 'General' tab, ensure 'Real-time Agent Collision Alerts' is toggled **ON**.\n\nThis will eliminate duplicate customer responses right away. Let me know if you need any assistance confirming your settings!\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Feature name is Collision Detection",
+      "Real-time viewing avatar and typing warning banner",
+      "Send protection modal if another agent replied first",
+      "Enabled in Settings > Shared Mailboxes > General > Real-time Agent Collision Alerts"
+    ],
+    "prohibited_actions": [
+      "Do not suggest customers manually notify each other via Slack as primary solution",
+      "Do not claim the feature is paid add-on when standard"
+    ],
+    "policy_applied": "Product Guidance - Collaboration Features"
+  },
+  {
+    "id": "KB-114",
+    "category": "product_how_to",
+    "subject": "Using dynamic variables and placeholders in shared email templates",
+    "customer_email": "Hello, we want to create standardized email response templates for our customer service reps, but we want the customer's first name and ticket reference ID to fill in automatically. What syntax do we use for templates? Thanks, Samantha.",
+    "customer_sentiment": "neutral",
+    "intent": "How to use dynamic placeholders/variables in shared email templates",
+    "ground_truth_reply": "Hi Samantha,\n\nUsing dynamic placeholders is a great way to personalize replies while saving your team time!\n\nWe support the following dynamic placeholders in all shared email templates:\n- `{{contact.first_name}}` - Recipient's first name (e.g., Samantha)\n- `{{contact.last_name}}` - Recipient's last name\n- `{{ticket.id}}` - Unique ticket reference number (e.g., #TK-1029)\n- `{{agent.first_name}}` - The sending agent's first name\n- `{{company.name}}` - Customer company name\n\nTo create a template with placeholders:\n1. Navigate to Settings > Shared Templates > 'Create New Template'.\n2. While composing, click the **'Insert Placeholder' ({{ }})** icon in the rich text toolbar or type the placeholder directly.\n3. Provide a fallback value (e.g., `{{contact.first_name | 'there'}}`) in case a contact record lacks a first name.\n4. Click 'Save & Share with Team'.\n\nWhen your agents insert the template into a reply, our system automatically populates the exact contact and ticket values. Let us know if you need any help creating your first set!\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Syntax uses double curly brackets {{contact.first_name}}, {{ticket.id}}, etc.",
+      "Fallback values supported via pipe syntax {{contact.first_name | 'there'}}",
+      "Settings > Shared Templates > Insert Placeholder icon",
+      "Auto-populates when template is inserted"
+    ],
+    "prohibited_actions": [
+      "Do not suggest unsupported placeholder syntaxes (e.g., %NAME% or $NAME)",
+      "Do not forget to mention fallback values"
+    ],
+    "policy_applied": "Product Guidance - Email Templates"
+  },
+  {
+    "id": "KB-115",
+    "category": "sla_escalations",
+    "subject": "GDPR data deletion request for former customer",
+    "customer_email": "Dear Data Protection Officer, in accordance with Article 17 of GDPR (Right to Erasure), we request the permanent deletion of all personal data, email transcripts, and contact history associated with user 'j.doe@apexfin.eu'. Please confirm execution within statutory timeline. - Compliance Team, ApexFin.",
+    "customer_sentiment": "neutral",
+    "intent": "GDPR Article 17 Right to Erasure / permanent data deletion request",
+    "ground_truth_reply": "Dear ApexFin Compliance Team,\n\nThank you for contacting our Data Protection Office. We take data privacy and GDPR compliance with the utmost seriousness.\n\nWe have logged your Right to Erasure request under reference #GDPR-2026-0419 for contact `j.doe@apexfin.eu`.\n\nOur Data Governance Team has initiated the cryptographic erasure procedure across our primary production databases and search indices. In compliance with statutory requirements:\n1. All personal identifiers, email thread bodies, notes, and metadata associated with `j.doe@apexfin.eu` will be purged within 14 calendar days (well within the statutory 30-day window).\n2. Immutable audit logs required for financial compliance will be retained in accordance with Art. 17(3)(b).\n\nYou will receive a formal Certificate of Erasure upon full completion. Please let us know if you have any questions.\n\nSincerely,\nData Protection Office & Compliance Support",
+    "key_facts": [
+      "Request logged under GDPR reference ID",
+      "Data erasure executed across production databases within 14 days (within 30-day requirement)",
+      "Certificate of Erasure will be issued upon completion",
+      "Statutory compliance under Article 17"
+    ],
+    "prohibited_actions": [
+      "Never refuse a valid GDPR deletion request",
+      "Do not delete data haphazardly without issuing compliance reference tracking"
+    ],
+    "policy_applied": "Data Protection & Privacy Policy (GDPR / SOC2)"
+  },
+  {
+    "id": "KB-116",
+    "category": "billing_and_invoicing",
+    "subject": "Non-profit and educational discount eligibility inquiry",
+    "customer_email": "Hello, we are a registered 501(c)(3) environmental nonprofit in Oregon. Do you offer special non-profit or educational discounts for your shared inbox plans? How do we apply? Thanks, Elena Rostova.",
+    "customer_sentiment": "polite",
+    "intent": "Inquiring about non-profit discount eligibility and application process",
+    "ground_truth_reply": "Hi Elena,\n\nThank you for reaching out and thank you for the impactful work your organization does!\n\nYes, we offer a 30% lifetime discount on all annual and monthly plans for verified non-profit organizations, educational institutions, and open-source initiatives.\n\nTo apply the discount to your account:\n1. Reply to this email with a copy of your IRS 501(c)(3) determination letter or tax exemption certificate.\n2. Include the primary email address of your account owner.\n\nOnce verified (usually within 1 business day), our billing team will attach the 30% recurring coupon to your workspace. Please let me know if you have any questions in the meantime!\n\nBest regards,\nBilling & Community Team",
+    "key_facts": [
+      "30% lifetime discount for verified non-profits",
+      "Requires 501(c)(3) certificate or tax exemption proof",
+      "Verification completed within 1 business day"
+    ],
+    "prohibited_actions": [
+      "Do not promise discounts without document verification",
+      "Do not claim discount is only valid for 1 month"
+    ],
+    "policy_applied": "Billing Policy §8.1 - Community & Non-Profit Programs"
+  },
+  {
+    "id": "KB-117",
+    "category": "billing_and_invoicing",
+    "subject": "How to downgrade subscription from Enterprise to Growth plan",
+    "customer_email": "Hi, we need to reduce expenses for the next quarter. How can we downgrade our subscription from Enterprise to Growth tier starting on our next billing cycle? - Thomas Reed",
+    "customer_sentiment": "neutral",
+    "intent": "Requesting subscription downgrade from Enterprise to Growth tier effective next cycle",
+    "ground_truth_reply": "Hi Thomas,\n\nI can certainly guide you through scheduling a plan downgrade for your next billing cycle.\n\nTo schedule your downgrade:\n1. Log in as an Account Owner and go to Settings > Billing & Plans.\n2. Click 'Change Plan' and select the 'Growth' plan.\n3. Review the feature comparison (note: Enterprise features like Custom SLA Policies and SAML SSO will be paused).\n4. Click 'Schedule Downgrade for Next Renewal'.\n\nYour Enterprise features will remain active until your current term ends on your next renewal date, at which point the system will automatically renew at the Growth tier rate without interruption. If you need any assistance auditing seat allocations, we are here to help.\n\nBest regards,\nCustomer Success Team",
+    "key_facts": [
+      "Downgrade scheduled for end of current billing cycle",
+      "Enterprise features remain active until current term expires",
+      "Steps: Settings > Billing & Plans > Change Plan > Schedule Downgrade"
+    ],
+    "prohibited_actions": [
+      "Do not downgrade immediately without warning customer about loss of Enterprise features",
+      "Do not charge penalty fees for downgrading"
+    ],
+    "policy_applied": "Billing Policy §3.5 - Plan Transitions"
+  },
+  {
+    "id": "KB-118",
+    "category": "technical_bugs",
+    "subject": "Email attachments failing to upload with error 413 Payload Too Large",
+    "customer_email": "Our agents cannot attach PDF proposal files to outgoing emails. The uploader errors out saying 'Error 413: Payload too large'. The PDF is only 28 MB. What is the limit and how do we send this? - Liam Cooper",
+    "customer_sentiment": "frustrated",
+    "intent": "Unable to attach large PDF due to 413 Payload Too Large error",
+    "ground_truth_reply": "Hi Liam,\n\nI understand your urgency in delivering this client proposal, and I apologize for the inconvenience.\n\nDirect email attachment uploads are capped at 25 MB per email, which aligns with the universal receiving limits enforced by Gmail, Outlook, and major email providers. Files larger than 25 MB are rejected with the 413 status.\n\nTo share files up to 250 MB seamlessly:\n1. Click the Google Drive / Cloud Link icon directly beside the paperclip attachment icon in the reply composer.\n2. Select your file from Google Drive or Dropbox to insert a direct, secure download link.\n3. Alternatively, compress the PDF using standard compression tools to bring it under 25 MB.\n\nThis ensures your recipient’s mail server will not reject the message upon delivery. Let us know if you need any further help!\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Direct email attachment limit is 25 MB (industry standard)",
+      "Use Google Drive/Cloud Link icon in composer for files up to 250 MB",
+      "Or compress PDF to under 25 MB"
+    ],
+    "prohibited_actions": [
+      "Do not claim attachment limit can be bypassed directly via SMTP",
+      "Do not blame the customer"
+    ],
+    "policy_applied": "Technical Guidelines - File Attachment Constraints"
+  },
+  {
+    "id": "KB-119",
+    "category": "technical_bugs",
+    "subject": "Search bar not finding emails older than 30 days",
+    "customer_email": "When I search for a customer email address from January, the shared inbox search returns zero results, even though the email exists in Gmail. Why is search not finding older conversations? - Anita Gomez",
+    "customer_sentiment": "confused",
+    "intent": "Shared inbox search query not returning conversations older than 30 days",
+    "ground_truth_reply": "Hi Anita,\n\nThank you for reaching out, and good question!\n\nBy default, quick search indexes the last 30 days of active conversation history for lightning-fast results. However, you can easily perform an extended deep search across your entire workspace history.\n\nTo search all historical emails:\n1. In the search box, type your query.\n2. Click the dropdown toggle next to the search bar and select 'Search All History (Extended)' or press `Enter` twice.\n3. You can also filter by specific date ranges using the filter operator `before:YYYY-MM-DD` or `after:YYYY-MM-DD`.\n\nThis will query the full archive directly. Please let us know if the specific email from January still does not appear after selecting Extended Search.\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Default quick search indexes past 30 days for performance",
+      "Extended search toggle or pressing Enter twice searches full archive",
+      "Supports date filters before: and after:"
+    ],
+    "prohibited_actions": [
+      "Do not tell user older emails were deleted when they are archived",
+      "Do not advise rebuilding index without trying extended toggle first"
+    ],
+    "policy_applied": "Search Indexing Architecture Guidelines"
+  },
+  {
+    "id": "KB-120",
+    "category": "account_access",
+    "subject": "Invited teammate not receiving welcome invitation email",
+    "customer_email": "I invited our new team member julian@company.com two hours ago, but he hasn't received the activation link. I checked the spelling and it is correct. Can you resend it or activate him manually? - Brenda Fox",
+    "customer_sentiment": "neutral",
+    "intent": "New team member invite email not received; request resend or manual activation",
+    "ground_truth_reply": "Hi Brenda,\n\nI'd be happy to assist in getting Julian onboarded!\n\nInvitation emails can occasionally get flagged by corporate spam or quarantine filters. Here are two quick ways to get Julian into the team immediately:\n\n1. **Direct Invite Link**: As an Admin, go to Settings > Team Management > Pending Invites > click the three dots next to Julian’s name > 'Copy Direct Invite Link'. You can send this link to Julian directly via Slack or internal message.\n2. **Resend Invite**: You can also click 'Resend Email' from that same menu.\n\nI have also manually re-triggered the dispatch from our secondary relay. Please advise Julian to check their Spam/Junk folder and ask IT to whitelist `notifications@ourdomain.com`.\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Admin can copy direct invite link from Settings > Team Management > Pending Invites",
+      "Manual re-trigger from relay executed",
+      "Whitelist recommendation for notifications@ourdomain.com"
+    ],
+    "prohibited_actions": [
+      "Do not require password reset before initial activation",
+      "Do not ask for user password"
+    ],
+    "policy_applied": "User Provisioning & Invitation Protocol"
+  },
+  {
+    "id": "KB-121",
+    "category": "account_access",
+    "subject": "Difference between Member, Admin, and Guest roles",
+    "customer_email": "Hi, we are setting up our organization permissions. What is the difference between an Admin, a Member, and a Guest in shared mailboxes? Who can see customer billing info? - Jason Kuo",
+    "customer_sentiment": "curious",
+    "intent": "Explaining user role permissions (Admin vs Member vs Guest) and billing access visibility",
+    "ground_truth_reply": "Hi Jason,\n\nHere is a clear breakdown of our three user roles:\n\n1. **Admin / Owner**:\n   - Full system access.\n   - Manage subscription, billing, and credit cards.\n   - Add/remove users and create/delete shared mailboxes.\n   - Configure global automation rules and SLA policies.\n\n2. **Member**:\n   - Daily operational agent.\n   - Can view, assign, reply to, and tag conversations in assigned shared mailboxes.\n   - Cannot view or edit billing, change plans, or alter organization-wide settings.\n\n3. **Guest** (Read-Only / Auditor):\n   - Can view conversations and leave internal notes.\n   - Cannot reply to customers or modify ticket statuses.\n   - No billing access.\n\nOnly users with the **Admin** or **Account Owner** role can see or manage billing information. You can configure role assignments under Settings > Team Management > Users.\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Admin: full access + billing + user management",
+      "Member: can reply/tag/assign tickets, no billing access",
+      "Guest: read-only + internal notes, cannot reply to customers",
+      "Only Admins/Owners see billing info"
+    ],
+    "prohibited_actions": [
+      "Do not state Members have billing access",
+      "Do not state Guests can send emails to customers"
+    ],
+    "policy_applied": "Role-Based Access Control (RBAC) Specification"
+  },
+  {
+    "id": "KB-122",
+    "category": "feature_requests",
+    "subject": "Request: Dark mode support for web app and Gmail extension",
+    "customer_email": "Hey support team! Working late shifts is hard on the eyes. Does your web app or extension have a dark mode option? If not, is this planned anytime soon? Thanks, Daniel K.",
+    "customer_sentiment": "polite",
+    "intent": "Inquiry regarding dark mode availability and roadmap release",
+    "ground_truth_reply": "Hi Daniel,\n\nWe completely agree—late-night support shifts definitely require a dark mode theme!\n\nDark mode is currently in active development across both our web app and Gmail extension. It is currently scheduled for public release in our upcoming v5.0 milestone next month.\n\nIn the meantime, our web application is fully compatible with browser dark mode extensions like Dark Reader. I have also added your account to our early beta access list; you will receive an invitation to try the dark mode theme within the next 2 weeks before the public launch!\n\nBest regards,\nCustomer Experience Team",
+    "key_facts": [
+      "Dark mode scheduled for v5.0 milestone next month",
+      "Web app compatible with Dark Reader extension in meantime",
+      "User enrolled in early beta preview within 2 weeks"
+    ],
+    "prohibited_actions": [
+      "Do not promise instant availability if not yet released",
+      "Do not dismiss ergonomic feedback"
+    ],
+    "policy_applied": "Roadmap Disclosure Guidelines"
+  },
+  {
+    "id": "KB-123",
+    "category": "feature_requests",
+    "subject": "AI Auto-summarization for lengthy email threads",
+    "customer_email": "We often have long email threads with 20+ customer exchanges. Is there an AI feature that can summarize the previous discussion before an agent steps in? - Maya Lin",
+    "customer_sentiment": "curious",
+    "intent": "Inquiring about AI email thread auto-summarization feature",
+    "ground_truth_reply": "Hi Maya,\n\nYes! We recently launched our **AI Conversation Summarizer** feature specifically designed for this.\n\nHere is how to use it:\n- When viewing any conversation thread with 3 or more messages, you will see a purple **'Summarize Thread'** button located at the top right of the conversation pane.\n- Clicking this generates a bulleted recap covering: Customer Problem, Steps Taken, and Pending Next Actions in seconds.\n\nIf you don't see the button yet, your Workspace Admin just needs to enable it:\n1. Go to Settings > AI & Copilot Features.\n2. Toggle 'AI Thread Summaries' to ON.\n\nThis feature is included on your Pro plan at no extra charge. Let us know what your team thinks once you try it!\n\nBest regards,\nProduct Support Team",
+    "key_facts": [
+      "Feature name: AI Conversation Summarizer",
+      "Visible on threads with 3+ messages via Summarize Thread button",
+      "Enabled in Settings > AI & Copilot Features",
+      "Included on Pro plan with no extra fee"
+    ],
+    "prohibited_actions": [
+      "Do not tell customer the feature does not exist when active",
+      "Do not quote unauthorized pricing"
+    ],
+    "policy_applied": "AI Feature Documentation & Availability"
+  },
+  {
+    "id": "KB-124",
+    "category": "sla_escalations",
+    "subject": "Security Responsible Disclosure: Potential CSRF vulnerability on settings page",
+    "customer_email": "Security Advisory: While evaluating your platform, our security team identified a missing Anti-CSRF token on the profile webhook update endpoint. Please provide your security team contact and PGP key for responsible disclosure. - Sentinel Security Labs",
+    "customer_sentiment": "neutral",
+    "intent": "Security researcher responsible disclosure regarding potential CSRF vulnerability",
+    "ground_truth_reply": "Dear Sentinel Security Labs Team,\n\nThank you for reaching out to us through responsible disclosure. We take product security and vulnerability reports with the highest priority.\n\nI have routed your report directly to our Head of Information Security and Security Operations Center (ticket #SEC-2026-881).\n\nTo securely transmit vulnerability details and proof-of-concept payloads:\n- Please email `security@ourdomain.com` directly.\n- Our public PGP key (Fingerprint: `4A9F 88C1 20B9 D43E 9011`) is available at `ourdomain.com/.well-known/security.txt` and `keys.openpgp.org`.\n- We adhere to a 48-hour SLA for triaging security disclosures and offer a vulnerability bounty program for verified findings.\n\nThank you for partnering with us to keep our users secure.\n\nSincerely,\nSecurity Operations & Triage Team",
+    "key_facts": [
+      "Escalated to Head of InfoSec under ticket #SEC-2026-881",
+      "Direct email: security@ourdomain.com",
+      "PGP key and security.txt location provided",
+      "48-hour triage SLA and bug bounty program mentioned"
+    ],
+    "prohibited_actions": [
+      "Never dismiss a security vulnerability disclosure as ordinary support",
+      "Do not debate or disclose internal security architecture publicly"
+    ],
+    "policy_applied": "Vulnerability Disclosure & Bug Bounty Protocol"
+  },
+  {
+    "id": "KB-125",
+    "category": "product_how_to",
+    "subject": "How to set up automated CSAT survey after ticket resolution",
+    "customer_email": "Hi there, we want to measure our customer satisfaction scores. How can we trigger an automatic CSAT survey email asking 'How would you rate our support?' when a ticket is marked Closed? - Jordan Bell",
+    "customer_sentiment": "neutral",
+    "intent": "How to configure automated Customer Satisfaction (CSAT) survey upon ticket closure",
+    "ground_truth_reply": "Hi Jordan,\n\nTracking CSAT is one of the best ways to keep a pulse on customer sentiment, and setting it up takes just a few clicks!\n\nHere is how to enable automated CSAT surveys:\n1. Navigate to Settings > Customer Feedback & CSAT.\n2. Click 'Enable CSAT Surveys' and select your shared mailbox.\n3. Choose your survey trigger: 'Send automatically when conversation status changes to Closed'.\n4. (Recommended) Set a survey cooldown delay (e.g., send 15 minutes after closing) to prevent sending surveys if an issue is quickly reopened.\n5. Customize your rating scale (1-5 stars or 2-point Good/Bad) and thank-you message.\n6. Click 'Save & Activate'.\n\nYou can review aggregate CSAT trends and agent scorecards in your Analytics > CSAT Reports tab. Let us know if you need any assistance customizing your survey template!\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Settings > Customer Feedback & CSAT > Enable CSAT Surveys",
+      "Trigger: when conversation status changes to Closed",
+      "Delay cooldown prevents premature surveys on reopen",
+      "Analytics > CSAT Reports tab for metrics"
+    ],
+    "prohibited_actions": [
+      "Do not recommend setting survey trigger on creation",
+      "Do not require third-party survey tool"
+    ],
+    "policy_applied": "Product Feature Guidance - CSAT & Analytics"
+  },
+  {
+    "id": "KB-126",
+    "category": "product_how_to",
+    "subject": "Connecting Google Workspace alias (support@domain.com) to shared inbox",
+    "customer_email": "Hello, we use Google Workspace. Our support email address is an alias rather than a separate paid Google user account. Can we connect this alias to your shared mailbox without paying Google for an extra license? Thanks, Keith",
+    "customer_sentiment": "neutral",
+    "intent": "Connecting Google Workspace alias to shared mailbox without extra Google license fee",
+    "ground_truth_reply": "Hi Keith,\n\nYes, absolutely! You do not need to purchase an additional Google Workspace license for your alias.\n\nHere is how to connect your Google Workspace email alias:\n1. In your Google Workspace Admin Console, ensure the alias (e.g., `support@domain.com`) is assigned to an existing primary admin or user mailbox.\n2. Log into your dashboard and navigate to Settings > Shared Mailboxes > 'Add New Mailbox'.\n3. Select 'Connect via Google Group / Alias Forwarding'.\n4. Copy the unique incoming forwarding address generated by our system (e.g., `support+inbox@inbound.ourdomain.com`).\n5. In your Google Admin or Gmail forwarding settings, set up an automatic forward from `support@domain.com` to that inbound address.\n6. Complete the one-time SMTP verification to allow your agents to reply directly using `support@domain.com` as the sender.\n\nThis setup is 100% free of extra Google licensing fees. Full documentation is available here: `docs.ourdomain.com/setup/google-alias`.\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "No extra Google Workspace license required",
+      "Uses email forwarding to unique inbound system address",
+      "SMTP verification enables reply-as alias",
+      "Setup guide at docs.ourdomain.com/setup/google-alias"
+    ],
+    "prohibited_actions": [
+      "Do not tell customer they must buy a paid Google Workspace seat",
+      "Do not omit SMTP sending verification step"
+    ],
+    "policy_applied": "Google Workspace Integration Guide"
+  },
+  {
+    "id": "KB-127",
+    "category": "billing_and_invoicing",
+    "subject": "Accidental subscription cancellation - can you restore our workspace?",
+    "customer_email": "HELP: One of our departing team members clicked 'Cancel Subscription' in our billing tab by mistake, and our team is panicking that our shared mailboxes will be deleted tonight. Can this cancellation be revoked? - Fiona Gallagher",
+    "customer_sentiment": "urgent",
+    "intent": "Customer accidentally canceled subscription; requesting immediate reinstatement and data protection",
+    "ground_truth_reply": "Hi Fiona,\n\nTake a deep breath—everything is completely safe! Your data and mailboxes have not been deleted.\n\nWhen a subscription is canceled, our policy keeps accounts and all historical data intact through the end of the billing period plus a 30-day recovery retention window.\n\nI have immediately reversed the cancellation request on your account. Your subscription has been restored to active status, and your regular billing schedule will resume seamlessly with no interruption to your mailboxes, tags, or team workflows.\n\nTo prevent accidental cancellations in the future, we recommend ensuring that only primary Account Owners have Billing Admin permissions under Settings > Team Management. Let me know if you need any further confirmation!\n\nBest regards,\nBilling Support Team",
+    "key_facts": [
+      "Cancellation reversed and account restored to active status",
+      "Data is protected for 30 days post-cancellation, no data was lost",
+      "Recommend restricting billing permissions to Owners"
+    ],
+    "prohibited_actions": [
+      "Do not tell customer data is lost",
+      "Do not charge reactivation fee"
+    ],
+    "policy_applied": "Billing Policy §3.9 - Cancellation Recovery"
+  },
+  {
+    "id": "KB-128",
+    "category": "technical_bugs",
+    "subject": "Email loop detected: automated auto-responder bounced back and forth",
+    "customer_email": "We have an automated ticket creation notification set up. A customer had an Out-of-Office auto-responder on, and our systems created 80 looping emails back and forth within 10 minutes! Does your system have loop protection? - Gary Cooper",
+    "customer_sentiment": "frustrated",
+    "intent": "Email loop caused by colliding auto-responders; inquiring about loop detection and mitigation",
+    "ground_truth_reply": "Hi Gary,\n\nThank you for notifying us, and I am very sorry for the email flood this loop created in your inbox.\n\nWe have built-in **Auto-Responder Loop Prevention**, but it looks like your automation rule was set to bypass standard RFC headers.\n\nHere is how to resolve and prevent this:\n1. I have temporarily paused the offending conversation thread (#TK-44102) and suppressed the delivery queue so no further loops will occur.\n2. Navigate to Settings > Automations > Your Ticket Creation Rule.\n3. Ensure the checkbox **'Suppress automated replies (Precedence: Bulk / Auto-Submitted)'** is enabled. This instructs our system to ignore incoming emails containing standard Out-of-Office and bounce headers.\n4. Our system automatically limits auto-responses to a maximum of 1 reply per sender address per 24 hours.\n\nI have also scrubbed the 80 duplicate loop tickets from your analytics so your CSAT and response metrics remain accurate. Let me know if you need any further clean-up!\n\nBest regards,\nTechnical Support Team",
+    "key_facts": [
+      "Offending loop thread paused and suppressed immediately",
+      "Enable 'Suppress automated replies' in automation rule",
+      "Built-in 1 reply per 24 hours per sender safety limit",
+      "Scrubbed duplicate loop tickets from analytics"
+    ],
+    "prohibited_actions": [
+      "Do not blame the customer without offering immediate mitigation",
+      "Do not leave duplicate spam tickets in their active reporting metrics"
+    ],
+    "policy_applied": "Mail Transport & Loop Suppression Specification §7.2"
+  },
+  {
+    "id": "KB-129",
+    "category": "account_access",
+    "subject": "Offboarding departed employee - how to reassign their open tickets",
+    "customer_email": "Hi, an employee left our company today. We need to revoke their account access immediately and reassign all 34 open customer tickets assigned to them to our general support pool. How do we do this safely? - Danielle Myers, Ops Manager",
+    "customer_sentiment": "neutral",
+    "intent": "Offboarding departed employee, revoking access, and bulk reassigning open tickets",
+    "ground_truth_reply": "Hi Danielle,\n\nHere is our recommended, seamless procedure for offboarding an employee while safeguarding ticket continuity:\n\n1. **Revoke Access & Transfer Tickets**:\n   - Navigate to Settings > Team Management > Users.\n   - Find the departed employee’s name and click the three dots > 'Deactivate User'.\n   - A modal will pop up asking: *'What would you like to do with active tickets assigned to this user?'*.\n   - Select **'Reassign all open tickets to...'** and choose either a specific team lead or 'Unassigned (General Pool)'.\n   - Click 'Confirm & Deactivate'.\n\n2. **Active Sessions Terminated**:\n   - This instantly revokes all active web sessions, mobile tokens, and extension logins.\n   - Any historical notes, comments, or sent replies created by the employee remain preserved in the audit log under their name.\n\nThis takes less than a minute and ensures no customer conversations slip through the cracks. Let me know if you run into any questions!\n\nBest regards,\nCustomer Support Team",
+    "key_facts": [
+      "Settings > Team Management > Users > Deactivate User",
+      "Deactivation modal provides automated bulk ticket reassignment",
+      "Immediate session revocation across web, mobile, and extension",
+      "Historical notes and audit log preserved"
+    ],
+    "prohibited_actions": [
+      "Do not recommend deleting user entirely which destroys historical audit logs",
+      "Do not leave tickets orphaned"
+    ],
+    "policy_applied": "User Lifecycle & Security Offboarding Protocol §3.1"
+  },
+  {
+    "id": "KB-130",
+    "category": "sla_escalations",
+    "subject": "Accidental email send to wrong customer containing sensitive contract details",
+    "customer_email": "URGENT ESCALATION: One of our junior reps accidentally replied to Ticket #91823 and included an attachment meant for a different client containing proprietary contract terms. The email was sent 2 minutes ago. Can your system recall or unsend this message? - Victor Sullivan, General Counsel",
+    "customer_sentiment": "urgent",
+    "intent": "Emergency recall request for sensitive email sent to incorrect recipient",
+    "ground_truth_reply": "Dear Victor,\n\nI understand the critical urgency and confidentiality of this situation.\n\nHere is the immediate status and actions taken:\n\n1. **Undo Send Window Check**:\n   - If the sending agent is within the 30-second 'Undo Send' window configured in Gmail or our interface, they must click the 'Undo' notification banner immediately at the bottom of their screen.\n2. **External Delivery Reality**:\n   - Once an email has passed the Undo window and traversed external SMTP servers to the recipient's mail host, internet email protocol (SMTP) does not permit an external sender to force-delete an email from an external recipient's inbox.\n3. **Immediate Mitigation Steps**:\n   - If the attachment was sent as a secure cloud link (Google Drive/Dropbox/DocuSign), immediately revoke public permissions or delete the file from your cloud drive to prevent access.\n   - We can assist in drafting an immediate formal recall/confidentiality notice to the recipient requesting deletion in accordance with non-disclosure standards.\n   - I have placed an administrative lock on ticket #91823 to preserve all access logs for your compliance and legal review.\n\nPlease let us know if the attachment was linked via cloud drive or if you would like our team to assist with an incident log export.\n\nSincerely,\nExecutive Incident Response & Security Support",
+    "key_facts": [
+      "Explain 30-second Undo Send window",
+      "Honest technical disclosure: SMTP cannot forcibly delete delivered external mail",
+      "Mitigation: revoke cloud file permissions immediately",
+      "Administrative lock placed on ticket to preserve legal audit logs"
+    ],
+    "prohibited_actions": [
+      "Never falsely promise that an external SMTP email has been recalled when impossible",
+      "Do not panic the customer, provide actionable mitigation steps"
+    ],
+    "policy_applied": "Data Breach & Email Recall Incident Response §1.2"
+  }
+]

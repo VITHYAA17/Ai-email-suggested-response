@@ -1,0 +1,138 @@
+{
+  "total_evaluations": 2,
+  "overall_accuracy_score": 59.14,
+  "system_pass_rate": 50.0,
+  "avg_intent_score": 3.5,
+  "avg_factual_score": 3.5,
+  "avg_tone_score": 5.0,
+  "avg_completeness_score": 3.5,
+  "avg_semantic_similarity": 0.15,
+  "avg_latency_seconds": 1.83,
+  "generation_mode": "rag_grounded",
+  "model_name": "openai/gpt-oss-120b",
+  "quality_tier_counts": {
+    "EXCELLENT": 0,
+    "GOOD": 1,
+    "FAIR": 0,
+    "POOR": 1
+  },
+  "category_performance": {
+    "billing_and_invoicing": {
+      "count": 2,
+      "avg_score": 59.14,
+      "pass_rate": 50.0
+    }
+  },
+  "individual_results": [
+    {
+      "test_id": "EVAL-001",
+      "category": "billing_and_invoicing",
+      "difficulty": "standard",
+      "subject": "Charged twice for our monthly renewal",
+      "customer_sentiment": "confused",
+      "customer_email": "Hi, I just checked our corporate credit card statement and noticed two identical charges of $150 from your service on September 1st. We only have one active workspace. Could you please check why we were double-billed and refund the duplicate? - Kevin O'Connor",
+      "reference_reply": "Hi Kevin,\n\nThank you for reaching out, and I apologize for the duplicate charge on your corporate card.\n\nI investigated your billing ledger and found that an automated retry coincided with a bank gateway confirmation, resulting in two charges of $150 (#CH-8191 and #CH-8192).\n\nI have immediately voided the duplicate transaction (#CH-8192) and issued a full refund of $150 back to your card. Depending on your financial institution, this credit will reflect on your statement within 3 to 5 business days.\n\nYour next regular billing date remains scheduled for October 1st. Please let me know if you need an updated receipt for your accounting records!\n\nBest regards,\nCustomer Support Team",
+      "generated_reply": "Hi Kevin,\n\nThank you for bringing this to our attention. I\u2019m sorry to see the duplicate charge on your statement\u2014it\u2019s certainly not the experience we want for our customers.\n\nI\u2019ve reviewed your account and can confirm that two $150 payments were processed on September\u202f1st for the same monthly renewal. I\u2019ve initiated a refund for the duplicate $150 charge back to the original credit card. You should see the credit appear on your statement within 3\u20115 business days, depending on your bank\u2019s processing time.\n\nIf you notice any further discrepancies or have any other questions, please let me know and I\u2019ll be happy to help.\n\nBest regards,\nCustomer Support Team",
+      "composite_accuracy_score": 75.87,
+      "quality_tier": "GOOD",
+      "is_passed": true,
+      "intent_score": 4.0,
+      "factual_score": 5.0,
+      "tone_score": 5.0,
+      "completeness_score": 4.0,
+      "semantic_similarity": 0.141,
+      "intent_rationale": "The reply fully acknowledges the duplicate $150 charge and confirms a refund will be issued, satisfying the primary intent. However, it omits the secondary detail of stating the next regular billing date and does not offer an updated receipt, which are part of the expected key facts.",
+      "factual_rationale": "All statements are accurate and align with policy: the duplicate charge is acknowledged, a refund is initiated, the 3\u20115 business day timeline is provided, and no prohibited requests (e.g., chargeback) are made. No hallucinations or false commitments are present.",
+      "tone_rationale": "The tone is courteous, apologetic, and empathetic, matching the customer's confused sentiment while maintaining a professional brand voice.",
+      "completeness_rationale": "The response gives clear next steps and a refund timeline, but it lacks the explicit next billing date and does not proactively offer an updated receipt, leaving minor unanswered questions.",
+      "overall_summary": "The AI-generated reply is generally strong: it acknowledges the issue, promises a refund, and conveys empathy. It falls short of full completeness by omitting the next billing date and receipt offer, which are required for full compliance with the ground\u2011truth specifications.",
+      "strengths": [
+        "Clear acknowledgment of duplicate charge and refund initiation",
+        "Empathetic and professional tone with precise refund timeline"
+      ],
+      "defects": [
+        "Missing next regular billing date and offer of an updated receipt"
+      ],
+      "latency_seconds": 1.571,
+      "retrieved_tickets": [
+        {
+          "id": "KB-102",
+          "subject": "Updating billing credit card after decline notification",
+          "category": "billing_and_invoicing",
+          "similarity_score": 0.295,
+          "policy_applied": "Billing Policy \u00a74.1 - Dunning and Grace Period"
+        },
+        {
+          "id": "KB-101",
+          "subject": "Request for refund on annual subscription auto-renewal",
+          "category": "billing_and_invoicing",
+          "similarity_score": 0.255,
+          "policy_applied": "Billing Policy \u00a73.2 - 14-Day Renewal Grace & Seat Proration"
+        },
+        {
+          "id": "KB-126",
+          "subject": "Connecting Google Workspace alias (support@domain.com) to shared inbox",
+          "category": "product_how_to",
+          "similarity_score": 0.051,
+          "policy_applied": "Google Workspace Integration Guide"
+        }
+      ]
+    },
+    {
+      "test_id": "EVAL-002",
+      "category": "billing_and_invoicing",
+      "difficulty": "standard",
+      "subject": "Can we switch from monthly to annual billing to save money?",
+      "customer_sentiment": "polite",
+      "customer_email": "Hello team, we are currently paying $25/user/month for 8 agents. We love the product and want to know if there is an annual discount if we pay upfront for the whole year. How much would we save and how do we switch? Thanks, Claire Vance.",
+      "reference_reply": "Hi Claire,\n\nWe're so thrilled to hear your team is loving the product!\n\nYes! We offer a 20% discount when you switch from monthly to annual billing. Here is how the savings look for your 8 seats:\n- Monthly billing: $25/seat/month ($200/month = $2,400/year)\n- Annual billing: $20/seat/month ($160/month billed as $1,920 annually)\n- Total annual savings: $480/year (2 months free!)\n\nTo switch to annual billing:\n1. Go to Settings > Billing & Plans as an Account Admin.\n2. Click 'Manage Subscription' and toggle the billing frequency to 'Annual'.\n3. Click 'Confirm Plan Change'.\n\nYour account will be prorated for any remaining days on your current monthly cycle. Let me know if you would like me to switch this over for you directly!\n\nBest regards,\nCustomer Success Team",
+      "generated_reply": "Hi Claire,\n\nThank you for reaching out and for the kind words about our product! I\u2019m glad to hear you\u2019re interested in moving to an annual billing cycle to take advantage of the savings it offers.\n\nWe do provide a discount for customers who switch from a monthly to an annual subscription. The exact amount you\u2019ll save depends on the current monthly rate and the number of seats, but you can typically expect a noticeable reduction compared to paying month\u2011by\u2011month.\n\nHere\u2019s how you can switch to annual billing:\n\n1. Log into your dashboard as an Account Admin.  \n2. Go to **Settings**\u202f\u2192\u202f**Billing & Plans**.  \n3. Under your current plan, click **Change Plan**.  \n4. Select the **Annual** billing option for the 8\u2011seat plan.  \n5. Review the displayed annual price (the discount will be applied automatically) and confirm the change.  \n\nThe new annual subscription will be charged upfront, and your service will continue without interruption. If you\u2019d like, I can generate a quick quote that shows the exact annual price and the total amount you\u2019ll save compared with your current $25\u202fper\u202fuser\u202fper\u202fmonth arrangement\u2014just let me know and I\u2019ll send it over.\n\nPlease feel free to reply if you have any questions about the process or need assistance while updating the plan. I\u2019m happy to help!\n\nBest regards,\nCustomer Support Team",
+      "composite_accuracy_score": 42.4,
+      "quality_tier": "POOR",
+      "is_passed": false,
+      "intent_score": 3.0,
+      "factual_score": 2.0,
+      "tone_score": 5.0,
+      "completeness_score": 3.0,
+      "semantic_similarity": 0.16,
+      "intent_rationale": "The reply acknowledges the customer's desire to switch to annual billing and provides step\u2011by\u2011step instructions, but it does not supply the requested concrete discount amount or savings calculation, leaving the primary intent only partially satisfied.",
+      "factual_rationale": "The response omits the mandated 20% annual discount and the specific savings ($480/year or 2 months free) required by policy. It also does not mention proration for the remaining days of the current monthly cycle. No incorrect facts are presented, but the essential factual details are missing.",
+      "tone_rationale": "The tone is warm, appreciative, and professional, matching the polite sentiment of the customer and adhering to brand voice guidelines.",
+      "completeness_rationale": "While the email gives clear navigation steps to change the billing cadence, it lacks the quantitative discount information and proration details, and it defers the exact quote to a later request, resulting in incomplete guidance.",
+      "overall_summary": "The reply is courteous and provides useful procedural instructions, but it fails to deliver the critical discount figure and savings breakdown required by the ground\u2011truth standards, making it only partially effective.",
+      "strengths": [
+        "Friendly, empathetic tone that aligns with the customer's polite sentiment.",
+        "Clear, step\u2011by\u2011step instructions for navigating to the billing settings."
+      ],
+      "defects": [
+        "Missing the explicit 20% annual discount and the calculated savings amount.",
+        "No mention of proration for the current monthly period.",
+        "Defers providing the exact quote instead of presenting it directly."
+      ],
+      "latency_seconds": 2.095,
+      "retrieved_tickets": [
+        {
+          "id": "KB-101",
+          "subject": "Request for refund on annual subscription auto-renewal",
+          "category": "billing_and_invoicing",
+          "similarity_score": 0.145,
+          "policy_applied": "Billing Policy \u00a73.2 - 14-Day Renewal Grace & Seat Proration"
+        },
+        {
+          "id": "KB-102",
+          "subject": "Updating billing credit card after decline notification",
+          "category": "billing_and_invoicing",
+          "similarity_score": 0.12,
+          "policy_applied": "Billing Policy \u00a74.1 - Dunning and Grace Period"
+        },
+        {
+          "id": "KB-116",
+          "subject": "Non-profit and educational discount eligibility inquiry",
+          "category": "billing_and_invoicing",
+          "similarity_score": 0.103,
+          "policy_applied": "Billing Policy \u00a78.1 - Community & Non-Profit Programs"
+        }
+      ]
+    }
+  ]
+}
